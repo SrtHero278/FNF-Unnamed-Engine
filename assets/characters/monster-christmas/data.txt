@@ -1,0 +1,16 @@
+frames:sparrow:monster-christmas/monsterChristmas
+
+anims:add:idle:monster idle:1:0
+
+anims:add:singLEFT:Monster left note:-30:0
+anims:add:singDOWN:monster down:-40:-94
+anims:add:singUP:monster up note:-20:50
+anims:add:singRIGHT:Monster Right note:-51:0
+
+offset:0:100:0:0
+healthColor:rgb:143,255,110
+
+icon:frames:grid:monster/icon:150:150
+icon:losing:1
+icon:normal:0
+icon:winning:0

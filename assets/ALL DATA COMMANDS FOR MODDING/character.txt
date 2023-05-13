@@ -1,0 +1,52 @@
+--Each parameter is seperated by a colon.
+--First Parameter is the command type.
+
+frames:spriteType:location --Get the character's frames.
+--spriteType: There are 4 sprite types:
+-sparrow for xml
+-packer for txt
+-grid that splits the image into sections (YOU WILL NEED TO ADD TWO EXTRA PAREMETERS WHERE YOU INPUT A NUMBER LIKE THIS --> ..location:150:150)
+--location: where the spritesheet is located (starts from the characters folder)
+
+anims: --Modifies animations.
+anims:add:name:prefix:xOffset:yOffset:indices -- Adds animation.
+--name: The name of the animation.
+--prefix: The name of the animation on the xml/txt/atlas json/etc. (type in a list of numbers if using grid like this --> ..name:0,1,2,3,4)
+--xOffset: The x offset.
+--yOffset: The y offset.
+--indices: OPTIONAL. REMOVE IF YOU ARE NOT DOING INDICES.
+anims:extra:name:fps:loop -- Modifies fps and looping of the animations.
+--name: The name of the animation to modify.
+--fps: The new FPS of the animation.
+--loop: Will it play over and over? (true or false)
+
+dead: -- Death Animation Modification.
+dead:frames:spriteType:location -- It's like frames: but for the death animation.
+dead:firstDeath:prefix:xOffset:yOffset:indices -- Like anims:add but for modifying the beginning death animation.
+dead:deathLoop:prefix:xOffset:yOffset:indices -- Like anims:add but for modifying the looped death animation.
+dead:deathConfirm:prefix:xOffset:yOffset:indices -- Like anims:add but for modifying the animation for when you restart.
+
+offset:xOffset:yOffset:cameraXOffset:cameraYOffset -- Modify the character's offset.
+--xOffset: The x offset of the character's position.
+--yOffset: The y offset of the character's position.
+--cameraXOffset: The x offset of the character's camera position.
+--cameraYOffset: The y offset of the character's camera position.
+
+healthColor:colorType:value -- Set the character's health color.
+--colorType: rgb, hsv/hsb, hsl, and hex.
+--value: Color value. (If not using hex, seperate the numbers using commas.)
+
+icon: --Modifies the icon.
+icon:frames:spriteType:location -- It's like frames: but for the icon.
+icon:normal:prefix -- Like anims:add but for the normal icon.
+icon:losing:prefix -- Like anims:add but for the losing icon.
+icon:winning:prefix -- Like anims:add but for the winning icon.
+
+scale:number -- Scales the character.
+--number: Scale factor.
+
+pixelized -- Makes the character pixelized. You only have to type in one word in one line.
+
+mirror:x:y -- Flips the character.
+--x: Does it flip horizontally? (true or false)
+--y: Does it flip vertically? (true or false)

@@ -1,0 +1,7 @@
+songOrder:Spookeez,South,Monster
+
+locked:weekBeat:tutorial
+
+opponent:position:50,150
+
+nonDisplayedSongs:Monster

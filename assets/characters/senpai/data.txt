@@ -1,0 +1,16 @@
+frames:sparrow:senpai/senpai
+anims:add:idle:Senpai Idle:1:0
+anims:add:singUP:SENPAI UP NOTE:5:37
+anims:add:singRIGHT:SENPAI RIGHT NOTE:0:0
+anims:add:singLEFT:SENPAI LEFT NOTE:40:0
+anims:add:singDOWN:SENPAI DOWN NOTE:14:0
+
+offset:150:360:-240:-330
+
+icon:frames:grid:senpai/icon:150:150
+icon:losing:1
+icon:normal:0
+icon:winning:0
+healthColor:rgb:255,170,111
+
+pixelized

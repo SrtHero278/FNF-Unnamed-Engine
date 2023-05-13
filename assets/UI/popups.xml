@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="popups.png">
+	<!-- Created with Adobe Animate version 22.0.6.202 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="num0" x="2" y="170" width="94" height="119"/>
+	<SubTexture name="num1" x="112" y="170" width="98" height="120"/>
+	<SubTexture name="num2" x="226" y="170" width="105" height="129"/>
+	<SubTexture name="num3" x="347" y="170" width="102" height="134"/>
+	<SubTexture name="num4" x="465" y="170" width="98" height="130"/>
+	<SubTexture name="num5" x="579" y="170" width="111" height="135"/>
+	<SubTexture name="num6" x="2" y="321" width="108" height="134"/>
+	<SubTexture name="num7" x="126" y="321" width="91" height="111"/>
+	<SubTexture name="num8" x="233" y="321" width="90" height="115"/>
+	<SubTexture name="num9" x="339" y="321" width="91" height="124"/>
+
+	<SubTexture name="sick0000" x="2" y="500" width="403" height="152"/>
+	<SubTexture name="good0000" x="447" y="2" width="317" height="126"/>
+	<SubTexture name="bad0000" x="170" y="2" width="261" height="131"/>
+	<SubTexture name="shit0000" x="446" y="321" width="285" height="163"/>
+
+	<SubTexture name="arrow0000" x="2" y="2" width="152" height="152"/>
+</TextureAtlas>

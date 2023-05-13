@@ -1,0 +1,71 @@
+{
+  "opponentNotes":[
+    {
+	"position": [155, 105],
+	"scale": [0.7, 0.7],
+	"angle": 0,
+	"direction": 0,
+	"alpha": 1,
+	"color": "C24B99"
+    },
+    {
+	"position": [265, 105],
+	"scale": [0.7, 0.7],
+	"angle": 270,
+	"direction": 0,
+	"alpha": 1,
+	"color": "00FFFF"
+    },
+    {
+	"position": [375, 105],
+	"scale": [0.7, 0.7],
+	"angle": 90,
+	"direction": 0,
+	"alpha": 1,
+	"color": "12FA05"
+    },
+    {
+	"position": [485, 105],
+	"scale": [0.7, 0.7],
+	"angle": 180,
+	"direction": 0,
+	"alpha": 1,
+	"color": "F9393F"
+    }
+  ],
+  "playerNotes":[
+    {
+	"position": [795, 105],
+	"scale": [0.7, 0.7],
+	"angle": 0,
+	"direction": 0,
+	"alpha": 1,
+	"color": "C24B99"
+    },
+    {
+	"position": [905, 105],
+	"scale": [0.7, 0.7],
+	"angle": 270,
+	"direction": 0,
+	"alpha": 1,
+	"color": "00FFFF"
+    },
+    {
+	"position": [1015, 105],
+	"scale": [0.7, 0.7],
+	"angle": 90,
+	"direction": 0,
+	"alpha": 1,
+	"color": "12FA05"
+    },
+    {
+	"position": [1125, 105],
+	"scale": [0.7, 0.7],
+	"angle": 180,
+	"direction": 0,
+	"alpha": 1,
+	"color": "F9393F"
+    }
+  ],
+  "keybinds": ["A", "S", "W", "D"]
+}

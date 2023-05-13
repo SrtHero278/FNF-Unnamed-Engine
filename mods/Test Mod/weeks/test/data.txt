@@ -1,0 +1,5 @@
+songOrder:Test
+
+locked:never
+
+opponent:visible:false

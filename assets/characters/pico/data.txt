@@ -1,0 +1,23 @@
+frames:sparrow:pico/Pico_FNF_assetss
+
+anims:add:idle:Pico Idle Dance:0:0
+
+anims:add:singLEFT:Pico Note Right0:65:9
+anims:add:singDOWN:Pico Down Note0:200:-70
+anims:add:singUP:pico Up note0:-29:27
+anims:add:singRIGHT:Pico NOTE LEFT0:-68:-7
+
+anims:add:singLEFTmiss:Pico Note Right Miss:62:64
+anims:add:singDOWNmiss:Pico Down Note MISS:210:-28
+anims:add:singUPmiss:pico Up note miss:-19:67
+anims:add:singRIGHTmiss:Pico NOTE LEFT miss:-60:41
+
+offset:0:300:0:0
+healthColor:rgb:183,216,85
+
+icon:frames:grid:pico/icon:150:150
+icon:losing:1
+icon:normal:0
+icon:winning:0
+
+mirror:true:false

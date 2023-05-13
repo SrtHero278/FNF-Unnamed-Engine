@@ -1,0 +1,3 @@
+songOrder:Bopeebo,Fresh,Dadbattle
+
+locked:weekBeat:tutorial

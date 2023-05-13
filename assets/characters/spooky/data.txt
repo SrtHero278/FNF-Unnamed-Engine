@@ -1,0 +1,15 @@
+frames:sparrow:spooky/spooky_kids_assets
+anims:add:singLEFT:note sing left:130:-10
+anims:add:singRIGHT:spooky sing right:-130:-14
+anims:add:singDOWN:spooky DOWN note:-50:-130
+anims:add:danceLeft:spooky dance idle:0:0:0,2,6
+anims:add:danceRight:spooky dance idle:0:0:8,10,12,14
+anims:add:singUP:spooky UP NOTE:-20:26
+
+offset:0:200:0:0
+
+icon:frames:grid:spooky/icon:150:150
+icon:losing:1
+icon:normal:0
+icon:winning:0
+healthColor:rgb:213,126,0

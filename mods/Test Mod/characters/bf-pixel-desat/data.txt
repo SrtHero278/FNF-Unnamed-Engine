@@ -1,0 +1,30 @@
+frames:sparrow:bf-pixel-desat/bfPixel
+
+anims:add:idle:BF IDLE:7:0
+
+anims:add:singLEFT:BF LEFT NOTE:0:0
+anims:add:singDOWN:BF DOWN NOTE:0:0
+anims:add:singUP:BF UP NOTE:0:0
+anims:add:singRIGHT:BF RIGHT NOTE:0:0
+
+anims:add:singLEFTmiss:BF LEFT MISS:0:0
+anims:add:singDOWNmiss:BF DOWN MISS:0:0
+anims:add:singUPmiss:BF UP MISS:0:0
+anims:add:singRIGHTmiss:BF RIGHT MISS:0:0
+
+dead:frames:sparrow:bf-pixel-desat/bfPixelsDEAD
+dead:firstDeath:BF Dies pixel:0:0
+dead:deathLoop:Retry Loop:-30:-12
+dead:deathConfirm:RETRY CONFIRM:-26:-12
+
+offset:0:350:50:-60
+healthColor:rgb:175,175,175
+
+icon:frames:grid:bf-pixel-desat/icon:150:150
+icon:losing:1
+icon:normal:0
+icon:winning:0
+
+mirror:true:false
+pixelized
+scale:6

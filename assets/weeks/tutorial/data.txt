@@ -1,0 +1,5 @@
+songOrder:Tutorial
+
+locked:never
+
+opponent:visible:false

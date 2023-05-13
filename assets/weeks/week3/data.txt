@@ -1,0 +1,6 @@
+songOrder:Pico,Philly Nice,Blammed
+
+locked:weekBeat:tutorial
+
+opponent:position:100,200
+opponent:scale:1

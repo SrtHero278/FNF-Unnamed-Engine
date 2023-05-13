@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="UI_assets.png">
+	<!-- Created with Adobe Animate version 22.0.6.202 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="win0" x="2" y="2" width="1729" height="955"/>
+	<SubTexture name="win1" x="2" y="973" width="1729" height="955"/>
+	<SubTexture name="win2" x="2" y="1944" width="1729" height="955"/>
+	<SubTexture name="win3" x="2" y="2915" width="1729" height="955"/>
+	<SubTexture name="win4" x="2" y="3886" width="1729" height="955"/>
+</TextureAtlas>

@@ -1,0 +1,16 @@
+frames:sparrow:senpai/senpai
+anims:add:idle:Angry Senpai Idle:2:0
+anims:add:singUP:Angry Senpai UP NOTE:5:37
+anims:add:singLEFT:Angry Senpai LEFT NOTE:40:0
+anims:add:singRIGHT:Angry Senpai RIGHT NOTE:0:0
+anims:add:singDOWN:Angry Senpai RIGHT NOTE:14:0
+
+offset:150:360:-240:-330
+
+icon:frames:grid:senpai-angry/icon:150:150
+icon:losing:1
+icon:normal:0
+icon:winning:0
+healthColor:rgb:255,170,111
+
+pixelized

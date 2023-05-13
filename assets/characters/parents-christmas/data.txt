@@ -1,0 +1,20 @@
+frames:sparrow:parents-christmas/mom_dad_christmas_assets
+
+anims:add:idle:Parent Christmas Idle:2:0
+anims:add:singUP:Parent Up Note Dad:-47:24
+anims:add:singDOWN:Parent Down Note Dad:-31:-29
+anims:add:singLEFT:Parent Left Note Dad:-30:16
+anims:add:singRIGHT:Parent Right Note Dad:-1:-23
+anims:add:singRIGHT-alt:Parent Right Note Mom:-1:-24
+anims:add:singDOWN-alt:Parent Down Note Mom:-30:-27
+anims:add:singLEFT-alt:Parent Left Note Mom:-30:15
+anims:add:singUP-alt:Parent Up Note Mom:-47:24
+
+offset:-500:0:0:0
+
+icon:frames:grid:parents-christmas/icon:150:150
+icon:losing:1
+icon:normal:0
+icon:winning:0
+healthColor:rgb:196,94,174
+

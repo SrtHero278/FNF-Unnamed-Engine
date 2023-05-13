@@ -1,0 +1,21 @@
+--Each parameter is seperated by a colon.
+--First Parameter is the command type.
+
+songOrder:songs -The list of playable songs.
+--songs: The song list. Seperate each song with a comma. (like this --> Song1,Song2,Song3)
+
+nonDisplayedSongs:songs -The songs that will not appear in the menu unless selecting a specific song.
+(You can also type "hiddenSongs")
+--songs: The song list. Seperate each song with a comma. (like this --> Song1,Song2,Song3)
+
+player: -Modify the menu player/bf data. (You can also type "playerData")
+player:visible:bool -Can you see the player?
+--bool: Are they visible? (true or false)
+player:position:x:y -Where is the player?
+--x: The x position of the player.
+--y: The y position of the player.
+player:scale:value -How big is the menu player?
+--value: The scale factor.
+
+spectator: -Like player: but for the spectator/gf. (You can also type "spectatorData")
+opponent: -Like player: but for the opponent/dad. (You can also type "opponentData")

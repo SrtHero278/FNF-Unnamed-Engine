@@ -1,0 +1,6 @@
+songOrder:Satin Panties,High,MILF
+
+locked:weekBeat:tutorial
+
+opponent:position:150,100
+opponent:scale:0.4
