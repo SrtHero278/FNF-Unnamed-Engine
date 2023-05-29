@@ -1,16 +1,16 @@
-frames:sparrow:dad/DADDY_DEAREST
+frames: sparrow: dad/DADDY_DEAREST
 
-anims:add:idle:Dad idle dance:0:0
+anims: add: idle: Dad idle dance: 0: 0
 
-anims:add:singLEFT:Dad Sing Note LEFT:-9:10
-anims:add:singDOWN:Dad Sing Note DOWN:0:-30
-anims:add:singUP:Dad Sing Note UP:-6:50
-anims:add:singRIGHT:Dad Sing Note RIGHT:0:27
+anims: add: singLEFT: Dad Sing Note LEFT: -9: 10
+anims: add: singDOWN: Dad Sing Note DOWN: 0: -30
+anims: add: singUP: Dad Sing Note UP: -6: 50
+anims: add: singRIGHT: Dad Sing Note RIGHT: 0: 27
 
-offset:0:0:0:0
-healthColor:rgb:175,102,206
+offset: 0: 0: 0: 0
+healthColor: rgb: 175,102,206
 
-icon:frames:grid:dad/icon:150:150
-icon:losing:1
-icon:normal:0
-icon:winning:0
+icon: frames: grid: dad/icon: 150: 150
+icon: losing: 1
+icon: normal: 0
+icon: winning: 0

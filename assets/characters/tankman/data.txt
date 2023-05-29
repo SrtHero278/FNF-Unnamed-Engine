@@ -1,26 +1,26 @@
-frames:sparrow:tankman/tankmanCaptain
+frames: sparrow: tankman/tankmanCaptain
 
-anims:add:idle:Tankman Idle Dance:0:0
+anims: add: idle: Tankman Idle Dance: 0: 0
 
-anims:add:singLEFT:Tankman Right Note 1:84:-14
-anims:add:singDOWN:Tankman DOWN note 1:76:-101
-anims:add:singUP:Tankman UP note 1:48:54
-anims:add:singRIGHT:Tankman Note Left 1:-21:-31
+anims: add: singLEFT: Tankman Right Note 1: 84: -14
+anims: add: singDOWN: Tankman DOWN note 1: 76: -101
+anims: add: singUP: Tankman UP note 1: 48: 54
+anims: add: singRIGHT: Tankman Note Left 1: -21: -31
 
-anims:add:singDOWN-alt:PRETTY GOOD tankman:1:16
-anims:add:singUP-alt:TANKMAN UGH:-15:-8
+anims: add: singDOWN-alt: PRETTY GOOD tankman: 1: 16
+anims: add: singUP-alt: TANKMAN UGH: -15: -8
 
-anims:add:singLEFTmiss:Tankman Right Note MISS:84:-14
-anims:add:singDOWNmiss:Tankman DOWN note MISS:76:-101
-anims:add:singUPmiss:Tankman UP note MISS:48:54
-anims:add:singRIGHTmiss:Tankman Note Left MISS:-21:-31
+anims: add: singLEFTmiss: Tankman Right Note MISS: 84: -14
+anims: add: singDOWNmiss: Tankman DOWN note MISS: 76: -101
+anims: add: singUPmiss: Tankman UP note MISS: 48: 54
+anims: add: singRIGHTmiss: Tankman Note Left MISS: -21: -31
 
-offset:0:240:0:0
-healthColor:rgb:0,0,0
+offset: 0: 240: 0: 0
+healthColor: rgb: 0,0,0
 
-icon:frames:grid:tankman/icon:150:150
-icon:losing:1
-icon:normal:0
-icon:winning:0
+icon: frames: grid: tankman/icon: 150: 150
+icon: losing: 1
+icon: normal: 0
+icon: winning: 0
 
-mirror:true:false
+mirror: true: false

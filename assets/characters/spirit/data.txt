@@ -1,17 +1,18 @@
-frames:packer:spirit/spirit
+frames: packer: spirit/spirit
 
-anims:add:idle:idle spirit_:-218:-280
-anims:add:singLEFT:left_:-200:-280
-anims:add:singDOWN:spirit down_:170:110
-anims:add:singRIGHT:right_:-220:-280
-anims:add:singUP:up_:-220:-240
+anims: add: idle: idle spirit_: -218: -280
+anims: add: singLEFT: left_: -200: -280
+anims: add: singDOWN: spirit down_: 170: 110
+anims: add: singRIGHT: right_: -220: -280
+anims: add: singUP: up_: -220: -240
 
-offset:-150:100:0:0
+offset: -150: 100: 0: 0
 
+icon: frames: grid: spirit/icon: 150: 150
+icon: losing: 1
+icon: normal: 0
+icon: winning: 0
+healthColor: rgb: 255,60,110
+
+scale: 6
 pixelized
-
-icon:frames:grid:spirit/icon:150:150
-icon:losing:1
-icon:normal:0
-icon:winning:0
-healthColor:rgb:255,60,110

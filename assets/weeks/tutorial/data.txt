@@ -1,5 +1,6 @@
-songOrder:Tutorial
+songOrder: Tutorial
+diffs: Easy--0xFF00FF55, Normal--0xFFFFFF00, Hard--0xFFFF0037
 
-locked:never
+locked: never
 
-opponent:visible:false
+opponent: visible: false

@@ -1,6 +1,7 @@
-songOrder:Pico,Philly Nice,Blammed
+songOrder: Pico, Philly Nice, Blammed
+diffs: Easy--0xFF00FF55, Normal--0xFFFFFF00, Hard--0xFFFF0037
 
-locked:weekBeat:tutorial
+locked: weekBeat: tutorial
 
-opponent:position:100,200
-opponent:scale:1
+opponent: position: 100, 200
+opponent: scale: 1

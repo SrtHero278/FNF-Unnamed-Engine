@@ -1,26 +1,26 @@
-frames:sparrow:gf/GF_assets
+frames: sparrow: gf/GF_assets
 
-anims:add:cheer:GF Cheer:3:0
-anims:add:scared:GF FEAR:-2:-17
-anims:extra:scared:24:true
-anims:add:sad:gf sad:-2:-21:0,1,2,3,4,5,6,7,8,9,10,11,12
+anims: add: cheer: GF Cheer: 3: 0
+anims: add: scared: GF FEAR: -2: -17
+anims: extra: scared: 24: true
+anims: add: sad: gf sad: -2: -21: 0,1,2,3,4,5,6,7,8,9,10,11,12
 
-anims:add:danceLeft:GF Dancing Beat:0:-9:30,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14
-anims:add:danceRight:GF Dancing Beat:0:-9:15,16,17,18,19,20,21,22,23,24,25,26,27,28,29
+anims: add: danceLeft: GF Dancing Beat: 0: -9: 30,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14
+anims: add: danceRight: GF Dancing Beat: 0: -9: 15,16,17,18,19,20,21,22,23,24,25,26,27,28,29
 
-anims:add:singLEFT:GF left note:0:-19
-anims:add:singDOWN:GF Down Note:0:-20
-anims:add:singUP:GF Up Note:0:4
-anims:add:singRIGHT:GF Right Note:0:-20
+anims: add: singLEFT: GF left note: 0: -19
+anims: add: singDOWN: GF Down Note: 0: -20
+anims: add: singUP: GF Up Note: 0: 4
+anims: add: singRIGHT: GF Right Note: 0: -20
 
-anims:add:hairBlow:GF Dancing Beat Hair blowing:45:-8:0,1,2,3
-anims:extra:hairBlow:24:true
-anims:add:hairFall:GF Dancing Beat Hair Landing:0:-9:0,1,2,3,4,5,6,7,8,9,10,11
+anims: add: hairBlow: GF Dancing Beat Hair blowing: 45: -8: 0,1,2,3
+anims: extra: hairBlow: 24: true
+anims: add: hairFall: GF Dancing Beat Hair Landing: 0: -9: 0,1,2,3,4,5,6,7,8,9,10,11
 
-offset:0:0:0:0
-healthColor:rgb:195,0,77
+offset: 0: 0: 0: 0
+healthColor: rgb: 195,0,77
 
-icon:frames:grid:gf/icon:150:150
-icon:losing:1
-icon:normal:0
-icon:winning:0
+icon: frames: grid: gf/icon: 150: 150
+icon: losing: 1
+icon: normal: 0
+icon: winning: 0

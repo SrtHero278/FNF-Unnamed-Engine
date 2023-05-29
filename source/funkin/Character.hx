@@ -96,7 +96,7 @@ class Character extends FlxSprite {
             
             for (i in 0...charData.length) {
 				if (charData[i] != null && charData[i].length > 0) {
-					var commandArray:Array<String> = charData[i].trim().split(":");
+					var commandArray:Array<String> = [for (line in charData[i].split(":")) line.trim()];
 					switch (commandArray[0]) {
 						case "frames":
 							if (Paths.fileExists(commandArray[2] + '.png', 'characters')) {
@@ -267,12 +267,12 @@ class Character extends FlxSprite {
 								case "hex" | "hexadecimal":
 									healthColor = Paths.colorFromString(commandArray[2]);
 								case "rgb" | "redGreenBlue":
-									var stringVals = commandArray[2].split(',');
+									var stringVals = [for (val in commandArray[2].split(',')) val.trim()];
 
 									var vals:Array<Int> = [Std.parseInt(stringVals[0]), Std.parseInt(stringVals[1]), Std.parseInt(stringVals[2])];
 									healthColor = FlxColor.fromRGB(vals[0], vals[1], vals[2]);
 								case "hsv" | "hsb" | "hueSaturationValue" | "hueSaturationBrightness":
-									var stringVals:Array<String> = commandArray[2].split(',');
+									var stringVals = [for (val in commandArray[2].split(',')) val.trim()];
 
 									var vals:Array<Float> = [
 										Std.parseFloat(stringVals[0]),
@@ -285,7 +285,7 @@ class Character extends FlxSprite {
 										vals[2] = vals[2] / 100;
 									healthColor = FlxColor.fromHSB(vals[0], vals[1], vals[2]);
 								case "hsl" | "hueSaturationLightness":
-									var stringVals:Array<String> = commandArray[2].split(',');
+									var stringVals = [for (val in commandArray[2].split(',')) val.trim()];
 
 									var vals:Array<Float> = [
 										Std.parseFloat(stringVals[0]),
@@ -397,7 +397,7 @@ class Character extends FlxSprite {
             var charData:Array<String> = Assets.getText(Paths.charFile(char + '/data.txt')).split('\n');
             for (i in 0...charData.length) {
 				if (charData[i] != null && charData[i].length > 0) {
-					var commandArray:Array<String> = charData[i].trim().split(":");
+					var commandArray:Array<String> = [for (line in charData[i].split(":")) line.trim()];
 					switch (commandArray[0]) {
 						case "offset":
 							oldOffsets = [Std.parseFloat(commandArray[1]), Std.parseFloat(commandArray[2])];
@@ -415,12 +415,12 @@ class Character extends FlxSprite {
 								case "hex" | "hexadecimal":
 									healthColor = Paths.colorFromString(commandArray[2]);
 								case "rgb" | "redGreenBlue":
-									var stringVals = commandArray[2].split(',');
+									var stringVals = [for (val in commandArray[2].split(',')) val.trim()];
 
 									var vals:Array<Int> = [Std.parseInt(stringVals[0]), Std.parseInt(stringVals[1]), Std.parseInt(stringVals[2])];
 									healthColor = FlxColor.fromRGB(vals[0], vals[1], vals[2]);
 								case "hsv" | "hsb" | "hueSaturationValue" | "hueSaturationBrightness":
-									var stringVals:Array<String> = commandArray[2].split(',');
+									var stringVals = [for (val in commandArray[2].split(',')) val.trim()];
 
 									var vals:Array<Float> = [
 										Std.parseFloat(stringVals[0]),
@@ -433,7 +433,7 @@ class Character extends FlxSprite {
 										vals[2] = vals[2] / 100;
 									healthColor = FlxColor.fromHSB(vals[0], vals[1], vals[2]);
 								case "hsl" | "hueSaturationLightness":
-									var stringVals:Array<String> = commandArray[2].split(',');
+									var stringVals = [for (val in commandArray[2].split(',')) val.trim()];
 
 									var vals:Array<Float> = [
 										Std.parseFloat(stringVals[0]),

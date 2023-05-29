@@ -1,16 +1,16 @@
-frames:sparrow:mom/Mom_Assets
+frames: sparrow: mom/Mom_Assets
 
-anims:add:idle:Mom Idle:0:0
-anims:add:singDOWN:MOM DOWN POSE:20:-160
-anims:add:singLEFT:Mom Left Pose:250:-23
-anims:add:singUP:Mom Up Pose:14:71
-anims:add:singRIGHT:Mom Pose Left:10:-60
+anims: add: idle: Mom Idle: 0: 0
+anims: add: singDOWN: MOM DOWN POSE: 20: -160
+anims: add: singLEFT: Mom Left Pose: 250: -23
+anims: add: singUP: Mom Up Pose: 14: 71
+anims: add: singRIGHT: Mom Pose Left: 10: -60
 
-offset:0:0:0:0
+offset: 0: 0: 0: 0
 
-icon:frames:grid:mom/icon:150:150
-icon:losing:1
-icon:normal:0
-icon:winning:0
+icon: frames: grid: mom/icon: 150: 150
+icon: losing: 1
+icon: normal: 0
+icon: winning: 0
 
-healthColor:rgb:216,85,142
+healthColor: rgb: 216,85,142

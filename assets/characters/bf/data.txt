@@ -1,35 +1,35 @@
-frames:sparrow:bf/BOYFRIEND
+frames: sparrow: bf/BOYFRIEND
 
-anims:add:scared:BF idle shaking:-4:0
-anims:add:idle:BF idle dance:-5:0
-anims:add:singLEFT:BF NOTE LEFT0:5:-6
-anims:add:singDOWN:BF NOTE DOWN0:-20:-51
-anims:add:singUP:BF NOTE UP0:-46:27
-anims:add:singRIGHT:BF NOTE RIGHT0:-48:-7
+anims: add: scared: BF idle shaking: -4: 0
+anims: add: idle: BF idle dance: -5: 0
+anims: add: singLEFT: BF NOTE LEFT0: 5: -6
+anims: add: singDOWN: BF NOTE DOWN0: -20: -51
+anims: add: singUP: BF NOTE UP0: -46: 27
+anims: add: singRIGHT: BF NOTE RIGHT0: -48: -7
 
-anims:add:singLEFTmiss:BF NOTE LEFT MISS:7:19
-anims:add:singDOWNmiss:BF NOTE DOWN MISS:-46:-27
-anims:add:singUPmiss:BF NOTE UP MISS:-46:27
-anims:add:singRIGHTmiss:BF NOTE RIGHT MISS:-44:22
+anims: add: singLEFTmiss: BF NOTE LEFT MISS: 7: 19
+anims: add: singDOWNmiss: BF NOTE DOWN MISS: -46: -27
+anims: add: singUPmiss: BF NOTE UP MISS: -46: 27
+anims: add: singRIGHTmiss: BF NOTE RIGHT MISS: -44: 22
 
-anims:add:hey:BF HEY:-3:5
-anims:add:hurt:BF hit:14:18
-anims:add:dodge:boyfriend dodge:-10:-16
-anims:add:attack:boyfriend attack:294:297
-anims:add:pre-attack:bf pre attack:-40:-40
+anims: add: hey: BF HEY: -3: 5
+anims: add: hurt: BF hit: 14: 18
+anims: add: dodge: boyfriend dodge: -10: -16
+anims: add: attack: boyfriend attack: 294: 297
+anims: add: pre-attack: bf pre attack: -40: -40
 
-dead:frames:sparrow:bf/BOYFRIEND_DEAD
-dead:firstDeath:BF dies:37:11
-dead:deathLoop:BF Dead Loop:37:5
-dead:deathConfirm:BF Dead confirm:37:69
+dead: frames: sparrow: bf/BOYFRIEND_DEAD
+dead: firstDeath: BF dies: 37: 11
+dead: deathLoop: BF Dead Loop: 37: 5
+dead: deathConfirm: BF Dead confirm: 37: 69
 
-offset:0:350:0:0
-healthColor:rgb:49,176,209
+offset: 0: 350: 0: 0
+healthColor: rgb: 49,176,209
 
-icon:frames:grid:bf/icon:150:150
-icon:losing:1
-icon:normal:0
-icon:winning:0
+icon: frames: grid: bf/icon: 150: 150
+icon: losing: 1
+icon: normal: 0
+icon: winning: 0
 
-mirror:true:false
+mirror: true: false
 normallyBF

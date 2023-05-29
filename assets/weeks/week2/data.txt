@@ -1,7 +1,8 @@
-songOrder:Spookeez,South,Monster
+songOrder: Spookeez, South, Monster
+diffs: Easy--0xFF00FF55, Normal--0xFFFFFF00, Hard--0xFFFF0037
 
-locked:weekBeat:tutorial
+locked: weekBeat: tutorial
 
-opponent:position:50,150
+opponent: position: 50, 150
 
-nonDisplayedSongs:Monster
+nonDisplayedSongs: Monster

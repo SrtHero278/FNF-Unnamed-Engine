@@ -1,5 +1,6 @@
-songOrder:Test
+songOrder: Test
+diffs: Custom--0xFF808080
 
-locked:never
+locked: never
 
-opponent:visible:false
+opponent: visible: false

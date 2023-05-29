@@ -1,3 +1,4 @@
-songOrder:Bopeebo,Fresh,Dadbattle
+songOrder: Bopeebo, Fresh, Dadbattle
+diffs: Easy--0xFF00FF55, Normal--0xFFFFFF00, Hard--0xFFFF0037
 
-locked:weekBeat:tutorial
+locked: weekBeat: tutorial
