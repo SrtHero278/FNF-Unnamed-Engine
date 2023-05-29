@@ -1,7 +1,8 @@
-songOrder:Cocoa,Eggnog,Winter Horrorland
-nonDisplayedSongs:Winter Horrorland
+songOrder: Cocoa, Eggnog, Winter Horrorland
+nonDisplayedSongs: Winter Horrorland
+diffs: Easy--0xFF00FF55, Normal--0xFFFFFF00, Hard--0xFFFF0037
 
-opponent:position:50,85
-opponent:scale:0.45
+opponent: position: 50, 85
+opponent: scale: 0.45
 
-locked:weekBeat:tutorial
+locked: weekBeat: tutorial
