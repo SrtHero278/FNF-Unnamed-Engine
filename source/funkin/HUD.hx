@@ -1,5 +1,6 @@
 package funkin;
 
+import openfl.events.KeyboardEvent;
 import Paths;
 import Options;
 import funkin.NoteLane;
@@ -72,7 +73,12 @@ class HUD extends FlxTypedGroup<FlxBasic> {
         }
 
         add(strums);
-        var keys:Array<Array<Int>> = [[37, FlxKey.fromString(Options.keybinds[0])], [40, FlxKey.fromString(Options.keybinds[1])], [38, FlxKey.fromString(Options.keybinds[2])], [39, FlxKey.fromString(Options.keybinds[3])]];
+        var keys:Array<Array<Int>> = [
+            [FlxKey.LEFT, FlxKey.fromString(Options.keybinds[0])],
+            [FlxKey.DOWN, FlxKey.fromString(Options.keybinds[1])],
+            [FlxKey.UP, FlxKey.fromString(Options.keybinds[2])],
+            [FlxKey.RIGHT, FlxKey.fromString(Options.keybinds[3])]
+        ];
         var missAnims = ["singLEFTmiss", "singDOWNmiss", "singUPmiss", "singRIGHTmiss"];
         for (i in 0...4) { // Opponent strums
             var daOpLane:NoteLane = new NoteLane(Options.opponentNotes[i], null, stateInstance.opponent, stateInstance);
@@ -154,9 +160,34 @@ class HUD extends FlxTypedGroup<FlxBasic> {
 
         healthBarBG.cameras = [camHUD];
         healthBar.cameras = [camHUD];
+
+        FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
+        FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, keyUp);
+    }
+
+    override public function destroy() {
+        super.destroy();
+
+        FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, keyDown);
+        FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, keyUp);
+    }
+
+    function keyDown(event:KeyboardEvent) {
+        for (strum in strums.members) {
+            if (strum.keybinds != null && strum.keybinds.contains(event.keyCode))
+                strum.press();
+        }
+    }
+
+    function keyUp(event:KeyboardEvent) {
+        for (strum in strums.members) {
+            if (strum.keybinds != null && strum.keybinds.contains(event.keyCode))
+                strum.release();
+        }
     }
 
     public function rating(ms:Float) {
+
         var rateIndex:Int = 0;
 
         for (rating in 0...rateNames.length) {

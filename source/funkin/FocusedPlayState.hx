@@ -117,7 +117,7 @@ class FocusedPlayState extends BareBonesPlayState {
 
                     var strum:NoteLane = hud.strums.members[data];
                     var defaultAnims:Array<Array<String>> = [["singLEFT", "singLEFTmiss"], ["singDOWN", "singDOWNmiss"], ["singUP", "singUPmiss"], ["singRIGHT", "singRIGHTmiss"]];
-                    var newNote:Note = new Note(note[0], note[2], strum.colors[1]);
+                    var newNote:Note = new Note(note[0], note[2], strum.colors[1], SONG.chart.speed);
                     newNote.arrow.angle = strum.strum.angle;
                     newNote.overlay.angle = strum.strumOverlay.angle;
                     if (section.altAnim)

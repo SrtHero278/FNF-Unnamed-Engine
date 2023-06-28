@@ -22,12 +22,12 @@ class NoteLane extends FlxTypedGroup<FlxBasic> {
     
     private var stateInstance:BareBonesPlayState;
 
-    var resetTimer:FlxTimer = new FlxTimer();
     var ghostTween:FlxTween;
 
     public var strum:FlxSprite;
     public var strumOverlay:FlxSprite;
     public var hittingSustain:Bool = false;
+    public var holding:Bool = false;
     public var notes:FlxTypedGroup<Note> = new FlxTypedGroup<Note>();
     public var unspawnNotes:Array<Note> = [];
 
@@ -68,6 +68,11 @@ class NoteLane extends FlxTypedGroup<FlxBasic> {
         strum.offset.set(0.5 * strum.frameWidth, 0.5 * strum.frameHeight);
         add(strum);
 
+        strum.animation.finishCallback = (name:String) -> {
+            if (name == "glow" && keybinds == null)
+                resetStrum();
+        }
+
         strumOverlay = new FlxSprite(strum.x, strum.y);
         strumOverlay.frames = Paths.sparrowAtlas('noteskins/default/normal/NOTE_assets', "UI");
         strumOverlay.animation.addByPrefix('overlay', 'strum overlay', 24, false);
@@ -86,8 +91,6 @@ class NoteLane extends FlxTypedGroup<FlxBasic> {
     override public function update(elapsed:Float) {
         super.update(elapsed);
 
-        resetValues();
-
         if (unspawnNotes[0] != null && unspawnNotes[0].strumTime - Conductor.songPosition < 2000) {
 			var spawningNote:Note = unspawnNotes[0];
             spawningNote.spawned = true;
@@ -96,7 +99,7 @@ class NoteLane extends FlxTypedGroup<FlxBasic> {
 			unspawnNotes.splice(0, 1);
 		}
         notes.forEach(function(note:Note) {
-            note.updatePos(daValues, stateInstance.SONG.chart.speed * -0.45 * (Conductor.songPosition - note.strumTime));
+            note.updatePos(daValues, stateInstance.SONG.chart.speed * -0.45 * (Conductor.songPosition - note.strumTime), stateInstance.SONG.chart.speed);
 
             if (note.strumTime - Conductor.songPosition + Options.inputOffset < -stateInstance.hud.rateValues[0][0] && !note.hittingSustain) {
                 if (keybinds != null && (note.sustainLength >= 35 || note.sustainLength <= 0)) { //I'll be kind with the holds. I'll ignore it if you released a few milliseconds too early.
@@ -115,24 +118,25 @@ class NoteLane extends FlxTypedGroup<FlxBasic> {
             }
         });
 
-        if (keybinds != null) {
-            inputs(elapsed);
-        } else {
+        if (keybinds != null && holding) {
+            hold(elapsed);
+        } else if (keybinds == null) {
             notes.forEach(function(note:Note) {
                 if (Math.abs(note.strumTime - Conductor.songPosition + Options.inputOffset) <= 45) {
                     if (note.sustainLength <= 0) {
                         removeNotePart(note, "note");
                         notes.remove(note, true);
+                        note.destroy();
                     } else {
                         removeNotePart(note, "note");
                         note.sustainLength -= elapsed * 1000;
                         note.hittingSustain = true;
-                        if (note.sustainLength <= note.tail.frameHeight)
+                        if (note.sustainLength * stateInstance.SONG.chart.speed * 0.675 <= note.tail.frameHeight)
                             removeNotePart(note, "hold");
                         if (note.sustainLength <= 0) {
                             removeNotePart(note, "tail");
                             notes.remove(note, true);
-                            note.hittingSustain = false;
+                            note.destroy();
                         }
                     }
 
@@ -145,18 +149,14 @@ class NoteLane extends FlxTypedGroup<FlxBasic> {
 
                     if (stateInstance.hitEnablesZoom)
                         stateInstance.sectionZooms = true;
-                    resetTimer.cancel();
-                    resetTimer.start(0.25, function(tmr:FlxTimer) {
-                        resetStrum();
-                    });
                 } else if (note.sustainLength > 0 && note.hittingSustain) {
                     note.sustainLength -= elapsed * 1000;
-                    if (note.sustainLength <= note.tail.frameHeight)
+                    if (note.sustainLength * stateInstance.SONG.chart.speed * 0.675 <= note.tail.frameHeight)
                         removeNotePart(note, "hold");
                     if (note.sustainLength <= 0) {
                         removeNotePart(note, "tail");
                         notes.remove(note, true);
-                        note.hittingSustain = false;
+                        note.destroy();
                     }
 
                     strum.animation.play('glow');
@@ -164,86 +164,93 @@ class NoteLane extends FlxTypedGroup<FlxBasic> {
                     strumOverlay.visible = false;
 
                     char.playAnim(note.hitAnim, true);
-                    resetTimer.reset(0.25);
                 }
             });
         }
+
+        resetValues();
     }
 
-    public function inputs(elapsed:Float) {
-        if (FlxG.keys.anyJustPressed(keybinds) ) {
-            notes.forEach(function(note:Note) {
-                if (Math.abs(note.strumTime - Conductor.songPosition + Options.inputOffset) <= stateInstance.hud.rateValues[0][0]) {
-                    if (note.sustainLength <= 0) {
-                        removeNotePart(note, "note");
-                        notes.remove(note, true);
-                    } else {
-                        removeNotePart(note, "note");
-                        note.sustainLength -= elapsed * 1000;
-                        if (note.sustainLength <= note.tail.frameHeight)
-                            removeNotePart(note, "hold");
-                        if (note.sustainLength <= 0) {
-                            removeNotePart(note, "tail");
-                            notes.remove(note, true);
-                            note.hittingSustain = false;
-                        }
-                    }
-                    hittingSustain = true;
-                    note.hittingSustain = true;
-
-                    strum.animation.play('glow');
-                    strum.color = colors[2];
-                    strumOverlay.visible = false;
-                    resetValues();
-
-                    if (stateInstance.hitEnablesZoom)
-                        stateInstance.sectionZooms = true;
-                    char.playAnim(note.hitAnim, true);
-
-                    stateInstance.hud.combo++;
-                    stateInstance.hud.rating(note.strumTime - Conductor.songPosition + Options.inputOffset);
-                }
-            });
-            if (!hittingSustain) { // Ghost tapping
-                ghostTween = FlxTween.tween(this, {ghostScale: 0.05}, 0.1, {ease: FlxEase.linear});
-                strum.animation.play('static');
-                strum.color = colors[3];
-                if (!Options.ghostTapping) {
-                    char.playAnim(missAnim);
-                    stateInstance.hud.combo = 0;
-                    stateInstance.hud.score -= 10;
-                    stateInstance.hud.misses++;
-                    stateInstance.health -= 0.025;
-                    stateInstance.hud.updateRank();
-                }
-            }
-        } else if (FlxG.keys.anyPressed(keybinds)) {
-            notes.forEach(function(note:Note) {
-                if (note.sustainLength > 0 && note.hittingSustain) {
-                    note.sustainLength -= elapsed * 1000;
-                    if (note.sustainLength <= note.tail.frameHeight)
+    public function press() {
+        notes.forEach(function(note:Note) {
+            if (Math.abs(note.strumTime - Conductor.songPosition + Options.inputOffset) <= stateInstance.hud.rateValues[0][0]) {
+                if (note.sustainLength <= 0) {
+                    removeNotePart(note, "note");
+                    notes.remove(note, true);
+                    note.destroy();
+                } else {
+                    removeNotePart(note, "note");
+                    note.sustainLength -= FlxG.elapsed * 1000;
+                    if (note.sustainLength * stateInstance.SONG.chart.speed * 0.675 <= note.tail.frameHeight)
                         removeNotePart(note, "hold");
                     if (note.sustainLength <= 0) {
                         removeNotePart(note, "tail");
                         notes.remove(note, true);
-                        note.hittingSustain = false;
+                        note.destroy();
                     }
-
-                    strum.animation.play('glow');
-                    strum.color = colors[2];
-                    strumOverlay.visible = false;
-
-                    char.playAnim(note.hitAnim, true);
                 }
-            });
-        } else if (FlxG.keys.anyJustReleased(keybinds) ) {
-            hittingSustain = false;
-            notes.forEach(function(note:Note) {
-                if (note.hittingSustain)
-                    note.hittingSustain = false;
-            });
-            resetStrum();
+                hittingSustain = true;
+                note.hittingSustain = true;
+
+                strum.animation.play('glow');
+                strum.color = colors[2];
+                strumOverlay.visible = false;
+                resetValues();
+
+                if (stateInstance.hitEnablesZoom)
+                    stateInstance.sectionZooms = true;
+                char.playAnim(note.hitAnim, true);
+
+                stateInstance.hud.combo++;
+                stateInstance.hud.rating(note.strumTime - Conductor.songPosition + Options.inputOffset);
+            }
+        });
+        if (!hittingSustain) { // Ghost tapping
+            ghostTween = FlxTween.tween(this, {ghostScale: 0.05}, 0.1, {ease: FlxEase.linear});
+            strum.animation.play('static');
+            strum.color = colors[3];
+            if (!Options.ghostTapping) {
+                char.playAnim(missAnim);
+                stateInstance.hud.combo = 0;
+                stateInstance.hud.score -= 10;
+                stateInstance.hud.misses++;
+                stateInstance.health -= 0.025;
+                stateInstance.hud.updateRank();
+            }
         }
+
+        holding = true;
+    }
+
+    public function release() {
+        hittingSustain = false;
+        holding = false;
+        notes.forEach(function(note:Note) {
+            if (note.hittingSustain)
+                note.hittingSustain = false;
+        });
+        resetStrum();
+    }
+
+    public function hold(elapsed:Float) {
+        notes.forEach(function(note:Note) {
+            if (note.sustainLength > 0 && note.hittingSustain) {
+                note.sustainLength -= elapsed * 1000;
+                if (note.sustainLength * stateInstance.SONG.chart.speed * 0.675 <= note.tail.frameHeight)
+                    removeNotePart(note, "hold");
+                if (note.sustainLength <= 0) {
+                    removeNotePart(note, "tail");
+                    notes.remove(note, true);
+                    note.destroy();
+                }
+
+                strum.animation.play('glow');
+                strum.color = colors[2];
+                strumOverlay.visible = false;
+
+                char.playAnim(note.hitAnim, true);
+            }
+        });
     }
 
     function resetValues() {
@@ -279,20 +286,30 @@ class NoteLane extends FlxTypedGroup<FlxBasic> {
     public function removeNotePart(note:Note, part:String) {
         switch (part) {
             case "note":
-                if (note.arrow != null)
+                if (note.arrow != null) {
                     note.arrow.destroy();
-                if (note.overlay != null)
                     note.overlay.destroy();
+                    note.spritesToRender.remove(note.arrow);
+                    note.spritesToRender.remove(note.overlay);
+                }
             case "hold":
-                if (note.hold != null)
+                if (note.hold != null) {
                     note.hold.destroy();
-                if (note.holdOverlay != null)
                     note.holdOverlay.destroy();
+                    note.spritesToRender.remove(note.hold);
+                    note.spritesToRender.remove(note.holdOverlay);
+                    note.hold = null;
+                    note.holdOverlay = null;
+                }
             case "tail":
-                if (note.tail != null)
+                if (note.tail != null) {
                     note.tail.destroy();
-                if (note.tailOverlay != null)
                     note.tailOverlay.destroy();
+                    note.spritesToRender.remove(note.tail);
+                    note.spritesToRender.remove(note.tailOverlay);
+                    note.tail = null;
+                    note.tailOverlay = null;
+                }
         }
     }
     
